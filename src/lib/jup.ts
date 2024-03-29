@@ -41,10 +41,10 @@ export const swap = async (
     publicKey: PublicKey
 ) => {
     // 开始
-    const { swapTransaction } = await post('https://quote-api.jup.ag/v6/swap', {
+    const resp = await post('https://quote-api.jup.ag/v6/swap', {
       quoteResponse: quoteResponse,
       userPublicKey: publicKey.toString(),
       wrapAndUnwrapSol: true
     })
-    return swapTransaction
+    return resp
 }
